@@ -1,3 +1,4 @@
 Django==5.0.3
 SQLAlchemy==2.0.28
 psycopg2-binary
+python-dotenv
