@@ -13,6 +13,7 @@ engine = create_engine(
 )
 
 
-with engine.connect() as conn:
-    result = conn.execute(text("select 'hello world'"))
-    print(result.all())
+if __name__ == "__main__":
+    with engine.connect() as conn:
+        result = conn.execute(text("select 'hello world'"))
+        print(result.all())
