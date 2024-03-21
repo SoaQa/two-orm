@@ -18,14 +18,14 @@ class UserAddresses(models.Model):
 
 class Address(models.Model):
     id = models.BigIntegerField(primary_key=True, auto_created=True)
-    country = models.CharField()
-    city = models.CharField()
-    street = models.CharField()
+    country = models.CharField(max_length=128)
+    city = models.CharField(max_length=128)
+    street = models.CharField(max_length=128)
     house_number = models.PositiveIntegerField()
     users = models.ManyToManyField(User, through="UserAddresses")
 
 
 class Invoice(models.Model):
     id = models.BigIntegerField(primary_key=True, auto_created=True)
-    cost = models.DecimalField(max_digits=10, decimal_places=2)
+    cost = models.DecimalField(max_digits=12, decimal_places=2)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="invoices")
