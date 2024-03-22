@@ -10,7 +10,7 @@ class User(models.Model):
     name = models.CharField(max_length=128, null=True, blank=True)
 
 
-class UserAddresses(models.Model):
+class UserAddress(models.Model):
     id = models.BigIntegerField(primary_key=True, auto_created=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     address = models.ForeignKey("Address", on_delete=models.CASCADE)
@@ -22,7 +22,7 @@ class Address(models.Model):
     city = models.CharField(max_length=128)
     street = models.CharField(max_length=128)
     house_number = models.PositiveIntegerField()
-    users = models.ManyToManyField(User, through="UserAddresses")
+    users = models.ManyToManyField(User, through="UserAddress")
 
 
 class Invoice(models.Model):
