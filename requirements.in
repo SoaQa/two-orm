@@ -3,3 +3,4 @@ SQLAlchemy==2.0.28
 psycopg2-binary
 python-dotenv
 alembic
+pytest

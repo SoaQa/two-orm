@@ -6,7 +6,7 @@ from django.test.utils import CaptureQueriesContext
 from core.models import User, Address
 
 
-class DatabaseTests(TestCase):
+class TestDatabase(TestCase):
     def test_create_and_get_user(self):
         user = User.objects.create(
             username="test",

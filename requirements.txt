@@ -10,13 +10,23 @@ asgiref==3.7.2
     # via django
 django==5.0.3
     # via -r requirements.in
+exceptiongroup==1.2.0
+    # via pytest
 greenlet==3.0.3
     # via sqlalchemy
+iniconfig==2.0.0
+    # via pytest
 mako==1.3.2
     # via alembic
 markupsafe==2.1.5
     # via mako
+packaging==24.0
+    # via pytest
+pluggy==1.4.0
+    # via pytest
 psycopg2-binary==2.9.9
+    # via -r requirements.in
+pytest==8.1.1
     # via -r requirements.in
 python-dotenv==1.0.1
     # via -r requirements.in
@@ -26,6 +36,8 @@ sqlalchemy==2.0.28
     #   alembic
 sqlparse==0.4.4
     # via django
+tomli==2.0.1
+    # via pytest
 typing-extensions==4.10.0
     # via
     #   alembic

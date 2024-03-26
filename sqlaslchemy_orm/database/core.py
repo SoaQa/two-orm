@@ -14,6 +14,12 @@ engine = create_engine(
     echo=True,
 )
 
+test_engine = create_engine(
+    f"postgresql+psycopg2://{os.environ['DB_USER']}:{os.environ['DB_PASSWORD']}@"
+    f"{os.environ['DB_HOST']}:{os.environ['DB_PORT']}/test_{os.environ['DB_NAME']}",
+    echo=True,
+)
+
 
 class Base(DeclarativeBase):
     ...
