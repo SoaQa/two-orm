@@ -1,9 +1,11 @@
 from typing import Optional
 
 from sqlalchemy import String, Integer, CheckConstraint, ForeignKey, Numeric
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship, DeclarativeBase
 
-from database.core import Base
+
+class Base(DeclarativeBase):
+    ...
 
 
 class UserAddress(Base):
@@ -20,7 +22,7 @@ class User(Base):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    username: Mapped[str] = mapped_column(String(128))
+    username: Mapped[str] = mapped_column(String(128), unique=True)
     password: Mapped[str] = mapped_column(String(256))
     name: Mapped[str] = Mapped[Optional[str]]
     email: Mapped[str] = mapped_column(String(128))

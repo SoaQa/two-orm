@@ -19,7 +19,9 @@ iniconfig==2.0.0
 mako==1.3.2
     # via alembic
 markupsafe==2.1.5
-    # via mako
+    # via
+    #   mako
+    #   werkzeug
 packaging==24.0
     # via pytest
 pluggy==1.4.0
@@ -43,3 +45,5 @@ typing-extensions==4.10.0
     #   alembic
     #   asgiref
     #   sqlalchemy
+werkzeug==3.0.1
+    # via -r requirements.in
